@@ -1,0 +1,111 @@
+# -----------------------------------------
+# PROGRAMA: REPRESENTACIÓN Y OPERACIONES PASO A PASO EN UNA MATRIZ 3x5
+# -----------------------------------------
+# Autor: Alex Armando Ávila Coello / Modificado por: [Tu Nombre]
+# Descripción: Igual que antes, pero mostrando cada operación detallada paso a paso.
+
+matriz = [
+    [5, 8, 2, 4, 3],       # Fila 1
+    [7, 5, 1, 8, 7],       # Fila 2
+    [2, 8, 16, 15, 14]     # Fila 3
+]
+
+# Mostrar matriz
+print("MATRIZ 3x5:\n")
+for i, fila in enumerate(matriz):
+    print(f"Fila {i+1}: {fila}")
+
+print("\n--- MOSTRANDO ELEMENTOS Y SUS POSICIONES ---")
+for i in range(len(matriz)):
+    for j in range(len(matriz[i])):
+        print(f"Elemento [{i+1},{j+1}] = {matriz[i][j]}")   # indices mostrados en base 1
+
+# Operaciones globales con pasos
+print("\n--- SUMA TOTAL (paso a paso) ---")
+suma_total = 0
+contador = 0
+for i, fila in enumerate(matriz):
+    for j, valor in enumerate(fila):
+        contador += 1
+        anterior = suma_total
+        suma_total += valor
+        print(f"Paso {contador}: sumar elemento [{i+1},{j+1}] = {valor} → {anterior} + {valor} = {suma_total}")
+print(f"Resultado final: Suma total = {suma_total}")
+
+# Máximo y mínimo mostrando comparaciones
+print("\n--- BÚSQUEDA DE MÁXIMO Y MÍNIMO (paso a paso) ---")
+maximo = matriz[0][0]
+minimo = matriz[0][0]
+paso = 0
+print(f"Inicial: máximo = {maximo}, mínimo = {minimo}")
+for i, fila in enumerate(matriz):
+    for j, valor in enumerate(fila):
+        paso += 1
+        if valor > maximo:
+            print(f"Paso {paso}: elemento [{i+1},{j+1}] = {valor} > máximo({maximo}) → actualizar máximo = {valor}")
+            maximo = valor
+        elif valor < minimo:
+            print(f"Paso {paso}: elemento [{i+1},{j+1}] = {valor} < mínimo({minimo}) → actualizar mínimo = {valor}")
+            minimo = valor
+        else:
+            print(f"Paso {paso}: elemento [{i+1},{j+1}] = {valor} → no cambia máximo({maximo}) ni mínimo({minimo})")
+print(f"Resultado final: máximo = {maximo}, mínimo = {minimo}")
+
+# Promedio con pasos (usar suma_total y contador ya calculados)
+print("\n--- CÁLCULO DEL PROMEDIO (paso a paso) ---")
+print(f"Usamos Suma total = {suma_total} y Conteo de elementos = {contador}")
+promedio = suma_total / contador
+print(f"Promedio = Suma total / Conteo = {suma_total} / {contador} = {promedio:.4f}")
+
+# Suma por filas con pasos
+print("\n--- SUMA POR FILA (paso a paso) ---")
+for i, fila in enumerate(matriz):
+    suma_fila = 0
+    pasos_fila = []
+    for j, v in enumerate(fila):
+        antes = suma_fila
+        suma_fila += v
+        pasos_fila.append(f"{antes} + {v} = {suma_fila}")
+    print(f"Fila {i+1} pasos: ")
+    for p in pasos_fila:
+        print("   ", p)
+    print(f"→ Suma final fila {i+1} = {suma_fila}\n")
+
+# Suma por columnas con pasos
+print("\n--- SUMA POR COLUMNA (paso a paso) ---")
+num_cols = len(matriz[0])
+num_filas = len(matriz)
+for col in range(num_cols):
+    suma_col = 0
+    pasos_col = []
+    for fila in range(num_filas):
+        valor = matriz[fila][col]
+        antes = suma_col
+        suma_col += valor
+        pasos_col.append(f"{antes} + {valor} = {suma_col}")
+    print(f"Columna {col+1} pasos:")
+    for p in pasos_col:
+        print("   ", p)
+    print(f"→ Suma final columna {col+1} = {suma_col}\n")
+
+# Búsqueda de un elemento mostrando acceso paso a paso
+print("\n--- BÚSQUEDA EXPLÍCITA DE UN ELEMENTO (paso a paso) ---")
+fila_buscada = 1      # Fila 2 (índice 1)
+columna_buscada = 3   # Columna 4 (índice 3)
+print(f"Queremos obtener matriz[{fila_buscada+1},{columna_buscada+1}] (índices humanos).")
+print(f"Convertimos a índices Python: fila={fila_buscada}, columna={columna_buscada}")
+print("Recorriendo hasta la fila buscada:")
+for i in range(len(matriz)):
+    print(f"  Accediendo a la fila {i} (índice python) -> {matriz[i]}")
+    if i == fila_buscada:
+        print("  ¡Llegamos a la fila buscada!")
+        print(f"  Accediendo al elemento en la columna {columna_buscada}: {matriz[i][columna_buscada]}")
+        elemento = matriz[i][columna_buscada]
+        break
+
+print(f"Elemento encontrado: matriz[Fila {fila_buscada+1}, Columna {columna_buscada+1}] = {elemento}")
+
+# Interpretación final
+print("\n--- INTERPRETACIÓN FINAL ---")
+print("Se mostró cada operación con sus pasos: sumas parciales, comparaciones para máximo/mínimo,")
+print("sumas por fila y por columna y la forma de acceso para encontrar un elemento.")
