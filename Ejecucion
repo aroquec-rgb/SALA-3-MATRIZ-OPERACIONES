@@ -1,0 +1,136 @@
+Ejecucion:
+MATRIZ 3x5:
+
+Fila 1: [5, 8, 2, 4, 3]
+Fila 2: [7, 5, 1, 8, 7]
+Fila 3: [2, 8, 16, 15, 14]
+
+--- MOSTRANDO ELEMENTOS Y SUS POSICIONES ---
+Elemento [1,1] = 5
+Elemento [1,2] = 8
+Elemento [1,3] = 2
+Elemento [1,4] = 4
+Elemento [1,5] = 3
+Elemento [2,1] = 7
+Elemento [2,2] = 5
+Elemento [2,3] = 1
+Elemento [2,4] = 8
+Elemento [2,5] = 7
+Elemento [3,1] = 2
+Elemento [3,2] = 8
+Elemento [3,3] = 16
+Elemento [3,4] = 15
+Elemento [3,5] = 14
+
+--- SUMA TOTAL (paso a paso) ---
+Paso 1: sumar elemento [1,1] = 5 → 0 + 5 = 5
+Paso 2: sumar elemento [1,2] = 8 → 5 + 8 = 13
+Paso 3: sumar elemento [1,3] = 2 → 13 + 2 = 15
+Paso 4: sumar elemento [1,4] = 4 → 15 + 4 = 19
+Paso 5: sumar elemento [1,5] = 3 → 19 + 3 = 22
+Paso 6: sumar elemento [2,1] = 7 → 22 + 7 = 29
+Paso 7: sumar elemento [2,2] = 5 → 29 + 5 = 34
+Paso 8: sumar elemento [2,3] = 1 → 34 + 1 = 35
+Paso 9: sumar elemento [2,4] = 8 → 35 + 8 = 43
+Paso 10: sumar elemento [2,5] = 7 → 43 + 7 = 50
+Paso 11: sumar elemento [3,1] = 2 → 50 + 2 = 52
+Paso 12: sumar elemento [3,2] = 8 → 52 + 8 = 60
+Paso 13: sumar elemento [3,3] = 16 → 60 + 16 = 76
+Paso 14: sumar elemento [3,4] = 15 → 76 + 15 = 91
+Paso 15: sumar elemento [3,5] = 14 → 91 + 14 = 105
+Resultado final: Suma total = 105
+
+--- BÚSQUEDA DE MÁXIMO Y MÍNIMO (paso a paso) ---
+Inicial: máximo = 5, mínimo = 5
+Paso 1: elemento [1,1] = 5 → no cambia máximo(5) ni mínimo(5)
+Paso 2: elemento [1,2] = 8 > máximo(5) → actualizar máximo = 8
+Paso 3: elemento [1,3] = 2 < mínimo(5) → actualizar mínimo = 2
+Paso 4: elemento [1,4] = 4 → no cambia máximo(8) ni mínimo(2)
+Paso 5: elemento [1,5] = 3 → no cambia máximo(8) ni mínimo(2)
+Paso 6: elemento [2,1] = 7 → no cambia máximo(8) ni mínimo(2)
+Paso 7: elemento [2,2] = 5 → no cambia máximo(8) ni mínimo(2)
+Paso 8: elemento [2,3] = 1 < mínimo(2) → actualizar mínimo = 1
+Paso 9: elemento [2,4] = 8 → no cambia máximo(8) ni mínimo(1)
+Paso 10: elemento [2,5] = 7 → no cambia máximo(8) ni mínimo(1)
+Paso 11: elemento [3,1] = 2 → no cambia máximo(8) ni mínimo(1)
+Paso 12: elemento [3,2] = 8 → no cambia máximo(8) ni mínimo(1)
+Paso 13: elemento [3,3] = 16 > máximo(8) → actualizar máximo = 16
+Paso 14: elemento [3,4] = 15 → no cambia máximo(16) ni mínimo(1)
+Paso 15: elemento [3,5] = 14 → no cambia máximo(16) ni mínimo(1)
+Resultado final: máximo = 16, mínimo = 1
+
+--- CÁLCULO DEL PROMEDIO (paso a paso) ---
+Usamos Suma total = 105 y Conteo de elementos = 15
+Promedio = Suma total / Conteo = 105 / 15 = 7.0000
+
+--- SUMA POR FILA (paso a paso) ---
+Fila 1 pasos:
+    0 + 5 = 5
+    5 + 8 = 13
+    13 + 2 = 15
+    15 + 4 = 19
+    19 + 3 = 22
+→ Suma final fila 1 = 22
+
+Fila 2 pasos:
+    0 + 7 = 7
+    7 + 5 = 12
+    12 + 1 = 13
+    13 + 8 = 21
+    21 + 7 = 28
+→ Suma final fila 2 = 28
+
+Fila 3 pasos:
+    0 + 2 = 2
+    2 + 8 = 10
+    10 + 16 = 26
+    26 + 15 = 41
+    41 + 14 = 55
+→ Suma final fila 3 = 55
+
+
+--- SUMA POR COLUMNA (paso a paso) ---
+Columna 1 pasos:
+    0 + 5 = 5
+    5 + 7 = 12
+    12 + 2 = 14
+→ Suma final columna 1 = 14
+
+Columna 2 pasos:
+    0 + 8 = 8
+    8 + 5 = 13
+    13 + 8 = 21
+→ Suma final columna 2 = 21
+
+Columna 3 pasos:
+    0 + 2 = 2
+    2 + 1 = 3
+    3 + 16 = 19
+→ Suma final columna 3 = 19
+
+Columna 4 pasos:
+    0 + 4 = 4
+    4 + 8 = 12
+    12 + 15 = 27
+→ Suma final columna 4 = 27
+
+Columna 5 pasos:
+    0 + 3 = 3
+    3 + 7 = 10
+    10 + 14 = 24
+→ Suma final columna 5 = 24
+
+
+--- BÚSQUEDA EXPLÍCITA DE UN ELEMENTO (paso a paso) ---
+Queremos obtener matriz[2,4] (índices humanos).
+Convertimos a índices Python: fila=1, columna=3
+Recorriendo hasta la fila buscada:
+  Accediendo a la fila 0 (índice python) -> [5, 8, 2, 4, 3]
+  Accediendo a la fila 1 (índice python) -> [7, 5, 1, 8, 7]
+  ¡Llegamos a la fila buscada!
+  Accediendo al elemento en la columna 3: 8
+Elemento encontrado: matriz[Fila 2, Columna 4] = 8
+
+--- INTERPRETACIÓN FINAL ---
+Se mostró cada operación con sus pasos: sumas parciales, comparaciones para máximo/mínimo,
+sumas por fila y por columna y la forma de acceso para encontrar un elemento.
